@@ -17,6 +17,7 @@ const productRoutes = require('./routes');
 app.use(express.json());
 app.use('/api/products', productRoutes);
 app.use((error, req, res, next) => {
+    // console.log(error.message);
     res
         .status(500)
         .json({ message: error.message })
